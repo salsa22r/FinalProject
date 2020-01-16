@@ -16,6 +16,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class LoginActivity extends AppCompatActivity {
     EditText emailId, password;
@@ -23,6 +24,7 @@ public class LoginActivity extends AppCompatActivity {
     TextView tvSignUp;
     FirebaseAuth mFirebaseAuth;
     private FirebaseAuth.AuthStateListener mAuthStateListener;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +36,8 @@ public class LoginActivity extends AppCompatActivity {
         password = findViewById(R.id.editText2);
         btnSignIn = findViewById(R.id.button);
         tvSignUp = findViewById(R.id.textView);
+
+
 
         mAuthStateListener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -49,6 +53,8 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         };
+
+
 
         btnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
